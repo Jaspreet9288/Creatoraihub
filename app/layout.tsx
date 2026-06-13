@@ -5,12 +5,13 @@ import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+  : process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "CreatorAI Hub — AI Tools for YouTube Creators",
+  description:
+    "10 AI-powered tools to help you write titles, scripts, descriptions, hashtags, and more — built for serious YouTube creators.",
 };
 
 const geistSans = Geist({
